@@ -6,9 +6,11 @@
 # Dependencies:
 #   HandBrakeCLI
 
-baseDir="$HOME/mediaSources/video"
+AVC_CONVERTER_PATH="${AVC_CONVERTER_PATH:-$HOME}"
+
+baseDir="$AVC_CONVERTER_PATH/mediaSources/video"
 workingDir="${baseDir}/tmp"
-destinationDir="$HOME/Videos/originalDvdMkv"
+destinationDir="$AVC_CONVERTER_PATH/Videos/originalDvdMkv"
 isoFiles=()
 
 # Function to print a message with formatting

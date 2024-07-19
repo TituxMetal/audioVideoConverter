@@ -1,6 +1,8 @@
 #!/bin/bash
 
-basePath="$HOME"
+AVC_CONVERTER_PATH="${AVC_CONVERTER_PATH:-$HOME}"
+
+basePath="$AVC_CONVERTER_PATH"
 mainMediaSources="${basePath}/mediaSources/audio"
 destinationPath="${basePath}/Musique"
 tmpPath="${mainMediaSources}/tmp"

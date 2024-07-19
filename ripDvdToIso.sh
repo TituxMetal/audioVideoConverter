@@ -10,9 +10,11 @@
 
 set -e
 
-baseDirectory="$HOME/mediaSources/video"
+AVC_CONVERTER_PATH="${AVC_CONVERTER_PATH:-$HOME}"
+
+baseDirectory="$AVC_CONVERTER_PATH/mediaSources/video"
 workingDirectory="${baseDirectory}/tmp"
-destinationDirectory="$HOME/Videos/originalDvdIso"
+destinationDirectory="$AVC_CONVERTER_PATH/Videos/originalDvdIso"
 dvdName=""
 
 # Function to print a message with formatting
