@@ -16,6 +16,11 @@ baseDirectory="$AVC_CONVERTER_PATH/mediaSources/video"
 workingDirectory="${baseDirectory}/tmp"
 destinationDirectory="$AVC_CONVERTER_PATH/Videos/originalDvdIso"
 dvdName=""
+# Define log file name with date and time
+logFile="$AVC_CONVERTER_PATH/ripDvdToIso_$(date +%Y-%m-%d_%H-%M-%S).log"
+
+# Redirect all output to log file
+exec > >(tee -a "$logFile") 2>&1
 
 # Function to print a message with formatting
 # Usage: printMessage <message>

@@ -9,6 +9,11 @@ tmpPath="${mainMediaSources}/tmp"
 wavMedia="${destinationPath}/copieWav"
 mp3Media="${destinationPath}/voitureMp3"
 flacMedia="${destinationPath}/originalFlac"
+# Define log file name with date and time
+logFile="$AVC_CONVERTER_PATH/convertAudio_$(date +%Y-%m-%d_%H-%M-%S).log"
+
+# Redirect all output to log file
+exec > >(tee -a "$logFile") 2>&1
 
 # Function to print a message with formatting
 # Usage: printMessage <message>

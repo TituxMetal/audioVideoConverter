@@ -12,6 +12,11 @@ baseDir="$AVC_CONVERTER_PATH/mediaSources/video"
 workingDir="${baseDir}/tmp"
 destinationDir="$AVC_CONVERTER_PATH/Videos/originalDvdMkv"
 isoFiles=()
+# Define log file name with date and time
+logFile="$AVC_CONVERTER_PATH/encode2mkv_$(date +%Y-%m-%d_%H-%M-%S).log"
+
+# Redirect all output to log file
+exec > >(tee -a "$logFile") 2>&1
 
 # Function to print a message with formatting
 # Usage: printMessage <message>
