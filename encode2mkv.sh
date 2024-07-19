@@ -128,7 +128,7 @@ encodeIsoToMkv() {
   fi
 
   # Define the HandBrakeCLI options with the longest title
-  local handbrakeOptions="--encoder x264 --quality 20 --optimize --encopts vbv-maxrate=2000:vbv-bufsize=2000 --x264-preset veryfast --x264-tune film --audio-lang-list \"fra, fre\" --aencoder copy --mixdown stereo --ab 160 --arate auto --format mkv --title $longestTitle"
+  local handbrakeOptions="--no-dvdnav --encoder x264 --quality 20 --optimize --encopts vbv-maxrate=2000:vbv-bufsize=2000 --x264-preset veryfast --x264-tune film --audio-lang-list \"fr\" --first-audio --aencoder copy --mixdown stereo --ab 160 --arate auto --format mkv --title $longestTitle"
 
   printMessage "Encoding $isoFile (Title $longestTitle) to MKV file..."
   HandBrakeCLI --input "$isoFile" --output "${mkvPath}/${dvdName}.mkv" ${handbrakeOptions}
